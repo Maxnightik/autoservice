@@ -30,24 +30,24 @@ const updateFieldsetVisibility = () => {
   }
 };
 
-formBtnNext.addEventListener("click", () => {
-  if (currentStep < formFieldsets.length - 1) {
-    currentStep += 1;
-    updateFieldsetVisibility();
-  }
-});
+const init = () => {
+  formBtnNext.addEventListener("click", () => {
+    if (currentStep < formFieldsets.length - 1) {
+      currentStep += 1;
+      updateFieldsetVisibility();
+    }
+  });
 
-formBtnPrev.addEventListener("click", () => {
-  if (currentStep > 0) {
-    currentStep -= 1;
-    updateFieldsetVisibility();
-  }
-});
+  formBtnPrev.addEventListener("click", () => {
+    if (currentStep > 0) {
+      currentStep -= 1;
+      updateFieldsetVisibility();
+    }
+  });
 
-updateFieldsetVisibility();
+  updateFieldsetVisibility();
 
-formBtnSubmit.addEventListener("click", () => {});
+  formBtnSubmit.addEventListener("click", () => {});
+};
 
-const init = () => {};
-
-init(0);
+init();
