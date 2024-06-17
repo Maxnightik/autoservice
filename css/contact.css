@@ -89,6 +89,10 @@
   line-height: 140%;
 }
 
+.form__time {
+  display: none;
+}
+
 .form__subtitle {
   font-weight: 500;
   line-height: 140%;
