@@ -30,11 +30,18 @@ const updateFieldsetVisibility = () => {
   }
 };
 
+const handleInputForm = ({ currentTarget }) => {
+  console.log(currentTarget.type);
+};
+
 const init = () => {
+  formBtnNext.disabled = true;
   formBtnNext.addEventListener("click", () => {
     if (currentStep < formFieldsets.length - 1) {
       currentStep += 1;
       updateFieldsetVisibility();
+      formBtnNext.disabled = true;
+      formBtnSubmit.disabled = true;
     }
   });
 
@@ -42,12 +49,13 @@ const init = () => {
     if (currentStep > 0) {
       currentStep -= 1;
       updateFieldsetVisibility();
+      formBtnNext.disabled = false;
     }
   });
 
   updateFieldsetVisibility();
 
-  formBtnSubmit.addEventListener("click", () => {});
+  form.addEventListener("input", handleInputForm);
 };
 
 init();
